@@ -1,4 +1,9 @@
 package com.e_market
 
-class EMarketApplication {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class EMarketApplication : Application(){
 }
+
