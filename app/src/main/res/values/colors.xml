@@ -7,4 +7,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="_bg__iphone_14___1_ek2_color">#FFFFFF</color>
+    <color name="_bg__search_ek1_color">#000000</color>
+    <color name="rectangle_1_color">#D9D9D9</color>
+    <color name="rectangle_5_color">#C4C4C4</color>
+    <color name="_15_000___color">#2A58FD</color>
+    <color name="ellipse_1_color">#F80000</color>
+    <color name="_bg__frame_1595_ek1_color">#2A58FD</color>
+    <color name="apple_iphone_14_pro_max_256_gb_color">#000000</color>
+    <color name="_bg__iphone_14___1_color">#FFFFFF</color>
+    <color name="_bg__frame_1612_ek1_color">#000000</color>
+
 </resources>

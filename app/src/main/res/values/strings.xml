@@ -1,3 +1,51 @@
 <resources>
+
     <string name="app_name">E-Market</string>
+    <string name="title_activity_emarket">EMarketActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="home_screen_name">Home</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="search_ek5_string">Search</string>
+    <string name="select_filter_string">Select Filter</string>
+    <string name="filters__string">Filters:</string>
+    <string name="_15_000___string">15.000 </string>
+    <string name="iphone_13_pro_max_256gb_string">iPhone 13 Pro Max 256Gb</string>
+    <string name="primary_string">Add to Cart</string>
+    <string name="_15_000___ek1_string">15.000 </string>
+    <string name="iphone_13_pro_max_256gb_ek1_string">iPhone 13 Pro Max 256Gb</string>
+    <string name="primary_ek1_string">Add to Cart</string>
+    <string name="_15_000___ek2_string">15.000 </string>
+    <string name="iphone_13_pro_max_256gb_ek2_string">iPhone 13 Pro Max 256Gb</string>
+    <string name="primary_ek2_string">Add to Cart</string>
+    <string name="icons_string">E-Market</string>
+    <string name="_15_000___ek3_string">15.000 </string>
+    <string name="iphone_13_pro_max_256gb_ek3_string">iPhone 13 Pro Max 256Gb</string>
+    <string name="primary_ek3_string">Add to Cart</string>
+
+
+    <string name="detail_sreen_name">Details</string>
+    <string name="apple_iphone_14_pro_max_256_gb_string">Apple iPhone 14 Pro Max 256 GB</string>
+    <string name="lorem_ipsum_dolor_sit_amet__consectetur_adipiscing_elit__vivamus_sodales_nibh_pretium_ipsum_faucibus__a_commodo_tortor_blandit__duis_pellentesque__purus_sed_gravida_sagittis__tortor_urna_eleifend_ante__a_volutpat_ex_est_vel_ipsum__etiam_in_auctor_nisi__donec_in_mattis_enim__in_bibendum_lorem__nam_vitae_semper_quam__string">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales nibh pretium ipsum faucibus, a commodo tortor blandit. Duis pellentesque, purus sed gravida sagittis, tortor urna eleifend ante, a volutpat ex est vel ipsum. Etiam in auctor nisi. Donec in mattis enim, in bibendum lorem. Nam vitae semper quam.</string>
+    <string name="price__124124124___string">Price: 124124124 </string>
+    <string name="apple_iphone_14_pro_max_256_gb_ek1_string">Apple iPhone 14 Pro Max 256 GB </string>
+
+    <string name="cart_screen_name">Cart</string>
+    <string name="samsung_s22_string">Samsung s22</string>
+    <string name="_12_000__string">12.000</string>
+    <string name="samsung_s22_ek1_string">Lenovo PC</string>
+    <string name="_12_000__ek1_string">18.000</string>
+    <string name="samsung_s22_ek2_string">iPhone 12</string>
+    <string name="_12_000__ek2_string">15.000</string>
+    <string name="secondary_string">-</string>
+    <string name="secondary_ek1_string">+</string>
+    <string name="secondary_ek2_string">-</string>
+    <string name="secondary_ek3_string">+</string>
+    <string name="secondary_ek4_string">-</string>
+    <string name="secondary_ek5_string">+</string>
+    <string name="total__124124124___string">Total: 124124124 </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
