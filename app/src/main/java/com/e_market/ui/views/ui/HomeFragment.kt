@@ -1,5 +1,6 @@
 package com.e_market.ui.views.ui
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -12,10 +13,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.e_market.R
+import com.e_market.data.local.ProductItem
+import com.e_market.data.remote.responses.ProductResponse
 import com.e_market.databinding.FragmentHomeBinding
 import com.e_market.ui.HomeAdapter
 import com.e_market.ui.viewmodels.HomeViewModel
@@ -31,13 +37,14 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var adapter: HomeAdapter
-    private lateinit var viewModel: HomeViewModel
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         _binding = FragmentHomeBinding.inflate(inflater,container,false)
 
         return binding.root
     }
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.search_menu, menu)
 
@@ -63,20 +70,35 @@ class HomeFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        provideViewModel()
         getProducts()
     }
-    private fun provideViewModel() {
-        viewModel = ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
-    }
+
     private fun getProducts() {
-        viewModel._productList.observe(viewLifecycleOwner, Observer {
-            adapter = HomeAdapter(it)
+        viewModel.productList.observe(viewLifecycleOwner, Observer {
+            adapter = HomeAdapter(it, this::onItemClicked, this::onAddToCartClicked)
             val layoutManager = GridLayoutManager(context, 2) // İkinci parametre sütun sayısını belirler
             binding.listProductRV.layoutManager = layoutManager
             binding.listProductRV.adapter = adapter
         })
+    }
+
+    private fun onItemClicked(id: String){
+        val bundle = Bundle()
+        bundle.putSerializable("productId", id)
+        findNavController().navigate(R.id.action_navigation_home_to_navigation_product_detail, bundle)
+    }
+
+    private fun onAddToCartClicked(productResponse: ProductResponse){
+        val productItem  = ProductItem ("apiResponse.id",
+            1,
+            productResponse.price.toFloat(),
+            productResponse.model,
+            productResponse.brand,
+            productResponse.imageUrl,
+            productResponse.id.toInt()
+        )
+
+        viewModel.insertProductItem(productItem)
     }
 
 

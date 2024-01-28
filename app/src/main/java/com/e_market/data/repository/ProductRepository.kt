@@ -22,6 +22,10 @@ class ProductRepository @Inject constructor(
          productDao.deleteProductItem(productItem)
     }
 
+    override suspend fun loadMyCart() = productDao.loadMyCart()
+
+    override suspend fun update(productItem: ProductItem) = productDao.update(productItem)
+
     override  fun observeAllProductItem(): LiveData<List<ProductItem>> {
         return productDao.observeAllProductItem()
     }

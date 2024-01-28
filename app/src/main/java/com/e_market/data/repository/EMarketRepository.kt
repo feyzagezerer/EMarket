@@ -2,7 +2,6 @@ package com.e_market.data.repository
 
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.e_market.data.local.ProductItem
 import com.e_market.data.remote.responses.ProductResponse
 import com.e_market.util.Resource
@@ -15,6 +14,10 @@ interface EMarketRepository {
     suspend fun insertProductItem(productItem: ProductItem)
 
     suspend fun deleteProductItem(productItem: ProductItem)
+
+    suspend fun loadMyCart(): List<ProductItem>
+
+    suspend fun update(productItem: ProductItem)
 
     fun observeAllProductItem(): LiveData<List<ProductItem>>
 

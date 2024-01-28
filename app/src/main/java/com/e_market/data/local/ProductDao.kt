@@ -2,6 +2,7 @@ package com.e_market.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.e_market.data.remote.responses.ProductResponse
 
 @Dao
 interface ProductDao {
@@ -21,6 +22,11 @@ interface ProductDao {
     @Query("select sum(price * amount) from product_items")
     fun observeTotalPrice(): LiveData<Float>
 */
+
+    @Query("select * from product_items")
+    suspend fun loadMyCart(): List<ProductItem>
+    @Update
+    suspend fun update(productItem: ProductItem)
 
 
 }

@@ -14,6 +14,7 @@ data class ProductItem(
     var price: Float,
     var model: String,
     var brand: String,
+    var imageURL: String,
     @PrimaryKey(autoGenerate = true)
     @SerializedName("id")
     var id: Int

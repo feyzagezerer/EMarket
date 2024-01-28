@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_product_detail" />
     <fragment
         android:id="@+id/navigation_cart"
-        android:name="com.e_market.ui.views.ui.CartFragment"
+        android:name="com.e_market.ui.views.ui.cart.CartFragment"
         android:label="@string/title_cart"
         tools:layout="@layout/fragment_cart" />
     <fragment

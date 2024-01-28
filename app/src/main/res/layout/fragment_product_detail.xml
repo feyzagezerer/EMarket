@@ -1,87 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<HorizontalScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.views.ui.ProductDetailFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/page_"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="wrap_content">
 
-
-                <Button
-                    android:id="@+id/addToCartDetail"
-                    android:text="@string/add_to_cart"
-                    android:layout_gravity="center_horizontal|center"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_width="182dp"
-                    android:layout_height="38dp"
-                    android:background="@drawable/_bg__component_1_ek1_shape"
-                    android:gravity="center"
-                    android:textColor="@color/_bg__iphone_14___1_ek2_color"
-                    android:textSize="18sp"
-                    />
-
-
-
-                <TextView android:id="@+id/price__124124124__"
-                    android:textSize="18dp"
-                    android:textColor="@color/_bg__frame_1595_ek1_color"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="721dp"
-                    android:layout_width="128.8dp"
-                    android:layout_height="49.8dp"
-                    android:text="@string/price" />
-
-                <ImageView android:id="@+id/productDetailImage"
-                    android:contentDescription="@string/title_product_detail"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/productDescription"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_width="359dp"
-                    android:layout_height="225dp" />
-
-
-                <TextView android:id="@+id/productBrand"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="307dp"
-                    android:layout_width="355dp"
-                    android:layout_height="30dp"
-                    android:text=""
-                    />
-
-                <TextView android:id="@+id/productDescription"
-                    android:textSize="14dp"
-                    android:textColor="@color/apple_iphone_14_pro_max_256_gb_color"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginTop="347dp"
-                    android:gravity="fill_vertical"
+                <ImageView
+                    android:id="@+id/productDetailImage"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/title_product_detail"
+                    android:src="@android:drawable/picture_frame"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_height="400dp" />
 
-                <ImageView android:id="@+id/star_1"
-                    android:src="@drawable/star_1"
-                    android:contentDescription="star_1"
-                    android:layout_marginStart="342dp"
-                    android:layout_marginTop="76dp"
-                    android:layout_width="22.83dp"
-                    android:layout_height="21.71dp" />
+                <ImageView
+                    android:id="@+id/productDetailFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_favorites"
+                    app:layout_constraintEnd_toEndOf="@id/productDetailImage"
+                    app:layout_constraintTop_toTopOf="@id/productDetailImage" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/productBrand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Apple iPhone 14 Pro Max 256 GB" />
 
 
+            <TextView
+                android:id="@+id/productDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="fill_vertical"
+                android:padding="16dp"
+                android:textColor="@color/apple_iphone_14_pro_max_256_gb_color"
+                android:textSize="14sp"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales nibh pretium ipsum faucibus, a commodo tortor blandit. Duis pellentesque, purus sed gravida sagittis, tortor urna eleifend ante, a volutpat ex est vel ipsum. Etiam in auctor nisi. Donec in mattis enim, in bibendum lorem. Nam vitae semper quam." />
+        </LinearLayout>
+
+    </ScrollView>
 
 
-            </RelativeLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
-</HorizontalScrollView>
+        <TextView
+            android:id="@+id/productDetailPriceTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/price"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@id/productDetailTotalPriceTv"
+            app:layout_constraintEnd_toStartOf="@id/addToCartDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/productDetailTotalPriceTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/addToCartDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productDetailPriceTv"
+            tools:text="221515 TL" />
+
+        <Button
+            android:id="@+id/addToCartDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="@string/add_to_cart"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
