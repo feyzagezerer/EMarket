@@ -6,125 +6,31 @@
         android:layout_height="match_parent"
         tools:context=".ui.views.ui.HomeFragment">
 
-        <RelativeLayout android:id="@+id/searchfilter"
-            android:layout_marginTop="0dp"
-            android:layout_marginStart="0dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:background="@drawable/rectangle_1_shape"
+        android:queryHint="Search">
 
+    </SearchView>
 
-
-            <RelativeLayout android:id="@+id/search"
-                android:layout_marginTop="63dp"
-                android:layout_marginStart="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                >
-
-                <View   android:id="@+id/_bg__search_ek1"
-                    android:background="@drawable/_bg__search_ek1_shape"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_width="360dp"
-                    android:layout_height="40dp" />
-
-
-                <RelativeLayout android:id="@+id/frame_1324"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <View   android:id="@+id/_bg__frame_1324_ek1"
-                        android:background="@drawable/_bg__frame_1324_ek1_shape"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_width="340dp"
-                        android:layout_height="24dp" />
-
-
-                    <RelativeLayout android:id="@+id/search_ek2"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginStart="0dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        >
-
-                        <View   android:id="@+id/_bg__search_ek3"
-                            android:background="@drawable/_bg__search_ek3_shape"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginTop="0dp"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp" />
-
-                        <ImageView android:id="@+id/search_ek4"
-                            android:src="@drawable/search_ek4"
-                            android:contentDescription="search_ek4"
-                            android:layout_marginStart="3dp"
-                            android:layout_marginTop="3dp"
-                            android:layout_width="16.5dp"
-                            android:layout_height="17.5dp" />
-
-                    </RelativeLayout>
-
-                    <TextView android:id="@+id/search_ek5"
-                        android:textSize="18sp"
-                        android:textColor="@color/_bg__search_ek1_color"
-                        android:layout_marginLeft="32dp"
-                        android:layout_marginTop="1dp"
-                        android:layout_width="78.8dp"
-                        android:layout_height="27.8dp"
-                        android:text="@string/search_ek5_string"
-                        />
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-
-            <View   android:id="@+id/rectangle_1"
-                android:background="@drawable/rectangle_1_shape"
-                android:layout_marginStart="215dp"
-                android:layout_marginTop="117dp"
-                android:layout_width="158dp"
-                android:layout_height="36dp" />
-
-            <TextView android:id="@+id/select_filter"
-                android:textSize="14sp"
-                android:textColor="@color/_bg__search_ek1_color"
-                android:layout_marginLeft="252dp"
-                android:layout_marginTop="127dp"
-                android:layout_width="96.4dp"
-                android:layout_height="21.4dp"
-                android:text="@string/select_filter_string"
-                />
-
-            <TextView android:id="@+id/filters_"
-                android:textSize="18sp"
-                android:textColor="@color/_bg__search_ek1_color"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="122dp"
-                android:layout_width="76.8dp"
-                android:layout_height="27.8dp"
-                android:text="@string/filters__string"
-                />
-
-
-        </RelativeLayout>
-
-
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listProductRV"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_height="wrap_content" />
 
 
-
+    </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
