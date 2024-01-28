@@ -26,18 +26,32 @@ class ProductRepository @Inject constructor(
         return productDao.observeAllProductItem()
     }
 
-    override    fun observeTotalPrice(): LiveData<Float> {
+   /* override    fun observeTotalPrice(): LiveData<Float> {
         return productDao.observeTotalPrice()
-    }
+    }*/
 
     // for api
-    override suspend fun searchForImages(id: Int): Resource<ProductResponse> {
-
+    override suspend fun getProduct(id: Int): Resource<ProductResponse> {
+        val response = eMarketAPI.getProduct(id)
         return try {
             val response = eMarketAPI.getProduct(id)
             if (response.isSuccessful) {
                 response.body()?.let { productResponse ->
                     return@let Resource.success(productResponse) // Apiden gelen verilerin hepsi başarılı ise bu kod bloğu çalışacak.
+                } ?: Resource.error("An unknown error occured.", null)
+            } else {
+                Resource.error("An unknown error occured.", null)
+            }
+        } catch (e: Exception) {
+            Resource.error("Couldn't reach the server. Check your internet connection", null)
+        }
+    }
+    override suspend fun getAllProducts(): Resource<List<ProductResponse>> {
+        return try {
+            val response = eMarketAPI.getAllProducts()
+            if (response.isSuccessful) {
+                response.body()?.let { productResponse ->
+                    return@let Resource.success(productResponse)
                 } ?: Resource.error("An unknown error occured.", null)
             } else {
                 Resource.error("An unknown error occured.", null)

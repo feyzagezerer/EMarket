@@ -1,82 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <RelativeLayout android:id="@+id/frame_1598"
+    android:padding="10dp">
 
+    <RelativeLayout
+        android:id="@+id/frame_1598"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ImageView android:id="@+id/star_2"
-            android:src="@drawable/star_2"
-            android:contentDescription="star_2"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/star_2"
+            android:layout_width="22.83dp"
+            android:layout_height="21.71dp"
             android:layout_marginStart="120dp"
             android:layout_marginTop="20dp"
-            android:layout_width="22.83dp"
-            android:layout_height="21.71dp" />
-        <View   android:id="@+id/_bg__frame_1598_ek1"
-            android:background="@drawable/_bg__frame_1598_ek1_shape"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_width="170dp"
-            android:layout_height="302dp" />
+            android:contentDescription="star_2"
+            android:src="@drawable/star_2" />
 
-        <View   android:id="@+id/rectangle_5"
-            android:background="@drawable/rectangle_5_shape"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+
+
+        <ImageView
+            android:id="@+id/productImage"
             android:layout_width="150dp"
-            android:layout_height="150dp" />
-
-        <TextView android:id="@+id/_15_000__"
-            android:textSize="14sp"
-            android:textColor="@color/_15_000___color"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="175dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:id="@+id/price"
             android:layout_width="71.4dp"
             android:layout_height="21.4dp"
-            android:text="@string/_15_000___string"
-            />
-
-        <TextView android:id="@+id/iphone_13_pro_max_256gb"
-            android:textSize="14sp"
-            android:textColor="@color/_bg__search_ek1_color"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="207dp"
+            android:layout_marginTop="175dp"
+            android:text="@string/_15_000___string"
+            android:textColor="@color/_15_000___color"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/brandAndModel"
             android:layout_width="163.4dp"
             android:layout_height="38.4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="207dp"
             android:text="@string/iphone_13_pro_max_256gb_string"
-            />
+            android:textColor="@color/_bg__search_ek1_color"
+            android:textSize="14sp" />
 
 
-        <RelativeLayout android:id="@+id/component_1"
-            android:layout_marginTop="256dp"
-            android:layout_marginStart="10dp"
+        <RelativeLayout
+            android:id="@+id/component_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-
-            <View   android:id="@+id/_bg__component_1_ek1"
-                android:background="@drawable/_bg__component_1_ek1_shape"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_width="150dp"
-                android:layout_height="36dp" />
-
-            <TextView android:id="@+id/primary"
-                android:layout_gravity="center_horizontal|center"
-                android:gravity="center"
-                android:textSize="16sp"
-                android:textColor="@color/_bg__iphone_14___1_ek2_color"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="256dp">
+            <Button
+                android:id="@+id/addToCart"
+                android:text="@string/primary_string"
                 android:layout_width="135dp"
                 android:layout_height="24.6dp"
-                android:text="@string/primary_string"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/_bg__component_1_ek1_shape"
+                android:gravity="center"
+                android:textColor="@color/_bg__iphone_14___1_ek2_color"
+                android:textSize="16sp"
                 />
+
 
         </RelativeLayout>
 
     </RelativeLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

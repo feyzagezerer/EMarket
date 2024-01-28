@@ -2,9 +2,12 @@
 
     <string name="app_name">E-Market</string>
     <string name="title_activity_emarket">EMarketActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_e_market">E-Market</string>
+    <string name="title_home"></string>
+    <string name="title_cart"></string>
+    <string name="title_favorites"></string>
+    <string name="title_profile"></string>
+    <string name="title_product_detail">Product Detail</string>
 
     <string name="home_screen_name">Home</string>
     <string name="ek_img_content">ExportKit Image</string>

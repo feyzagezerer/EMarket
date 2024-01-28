@@ -1,12 +1,12 @@
 package com.e_market.data.local
 
 
-import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.android.parcel.Parcelize
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-@Parcelize
+
 @Entity(tableName = "product_items")
 data class ProductItem(
     var name: String,
@@ -15,5 +15,6 @@ data class ProductItem(
     var model: String,
     var brand: String,
     @PrimaryKey(autoGenerate = true)
-    var id: String
-): Parcelable
+    @SerializedName("id")
+    var id: Int
+) : Serializable

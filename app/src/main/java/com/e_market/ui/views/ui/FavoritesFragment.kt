@@ -7,15 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.e_market.databinding.FragmentNotificationsBinding
+import com.e_market.databinding.FragmentFavoritesBinding
 import com.e_market.ui.viewmodels.FavoritesViewModel
 
 class FavoritesFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding : FragmentFavoritesBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -26,7 +24,7 @@ class FavoritesFragment : Fragment() {
         val notificationsViewModel =
             ViewModelProvider(this).get(FavoritesViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentFavoritesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textNotifications

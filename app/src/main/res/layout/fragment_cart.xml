@@ -21,34 +21,6 @@
                     android:layout_height="844dp" />
 
 
-                <RelativeLayout android:id="@+id/frame_1595"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginStart="0dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <View   android:id="@+id/_bg__frame_1595_ek1"
-                        android:background="@drawable/_bg__frame_1595_ek1_shape"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_width="390dp"
-                        android:layout_height="50dp" />
-
-                    <TextView android:id="@+id/icons"
-                        android:textStyle="bold"
-                        android:textSize="24sp"
-                        android:textColor="@color/_bg__iphone_14___1_color"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_width="135.4dp"
-                        android:layout_height="36.4dp"
-                        android:text="@string/icons_string"
-                        />
-
-                </RelativeLayout>
-
-
                 <RelativeLayout android:id="@+id/frame_1610"
                     android:layout_marginTop="67dp"
                     android:layout_marginStart="15dp"
@@ -103,7 +75,7 @@
                                 android:text="@string/samsung_s22_string"
                                 />
 
-                            <TextView android:id="@+id/_12_000_"
+                            <TextView android:id="@+id/mn"
                                 android:textSize="13sp"
                                 android:textColor="@color/_bg__frame_1595_ek1_color"
                                 android:layout_marginLeft="0dp"
@@ -140,7 +112,7 @@
                                 android:text="@string/samsung_s22_ek1_string"
                                 />
 
-                            <TextView android:id="@+id/_12_000__ek1"
+                            <TextView android:id="@+id/ek1"
                                 android:textSize="13sp"
                                 android:textColor="@color/_bg__frame_1595_ek1_color"
                                 android:layout_marginLeft="0dp"
@@ -177,7 +149,7 @@
                                 android:text="@string/samsung_s22_ek2_string"
                                 />
 
-                            <TextView android:id="@+id/_12_000__ek2"
+                            <TextView android:id="@+id/_h__ek2"
                                 android:textSize="13sp"
                                 android:textColor="@color/_bg__frame_1595_ek1_color"
                                 android:layout_marginLeft="0dp"

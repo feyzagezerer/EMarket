@@ -8,18 +8,28 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.e_market.ui.views.ui.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_homees" />
+        android:label="@string/title_e_market"
+        tools:layout="@layout/fragment_home">
+    <action
+        android:id="@+id/action_navigation_home_to_navigation_product_detail"
+        app:destination="@id/navigation_product_detail" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_product_detail"
+        android:name="com.e_market.ui.views.ui.ProductDetailFragment"
+        android:label="@string/title_product_detail"
+        tools:layout="@layout/fragment_product_detail" />
+    <fragment
+        android:id="@+id/navigation_cart"
         android:name="com.e_market.ui.views.ui.CartFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_cart"
         tools:layout="@layout/fragment_cart" />
-
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_favorites"
         android:name="com.e_market.ui.views.ui.FavoritesFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_favorites"
         tools:layout="@layout/fragment_favorites" />
+
+
 </navigation>
