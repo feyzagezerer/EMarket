@@ -44,7 +44,7 @@ class HomeAdapter(private val dataSet:List<ProductResponse>) :
         viewHolder.brandAndModel.text = String.format("%s %s", dataSet[position].brand, dataSet[position].model)
 
 
-        val url = IMAGE_MAIN_URL + dataSet[position].imageUrl
+        val url = dataSet[position].imageUrl
         viewHolder.itemView.apply {
             Glide.with(this).load(url).into(viewHolder.productImage)
         }

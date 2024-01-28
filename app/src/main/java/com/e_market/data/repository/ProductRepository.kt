@@ -31,7 +31,7 @@ class ProductRepository @Inject constructor(
     }*/
 
     // for api
-    override suspend fun getProduct(id: Int): Resource<ProductResponse> {
+    override suspend fun getProduct(id: String): Resource<ProductResponse> {
         val response = eMarketAPI.getProduct(id)
         return try {
             val response = eMarketAPI.getProduct(id)

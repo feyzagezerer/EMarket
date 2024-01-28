@@ -25,7 +25,7 @@ class EMarketActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navView: BottomNavigationView = binding.navView
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_emarket) as NavHostFragment
+            supportFragmentManager.findFragmentById(R.id.mobile_navigation) as NavHostFragment
         val navController = navHostFragment.navController
         val appBarConfiguration =
             AppBarConfiguration(setOf(R.id.navigation_home, R.id.navigation_cart, R.id.navigation_favorites))

@@ -6,15 +6,15 @@ import androidx.lifecycle.MutableLiveData
 import com.e_market.data.remote.responses.ProductResponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface EMarketApi {
-    @GET("/products/")
+    @GET("products/")
     suspend fun getAllProducts(): Response<List<ProductResponse>>
 
-
-    @GET("/products/")
+    @GET("products/{id}")
     suspend fun getProduct(
-        @Query("id") id: Int,
+        @Path("id") id: String,
     ): Response<ProductResponse>
 }

@@ -23,5 +23,5 @@ interface EMarketRepository {
 
     // Api
     suspend fun getAllProducts(): Resource<List<ProductResponse>>
-    suspend fun getProduct(id: Int): Resource<ProductResponse>
+    suspend fun getProduct(id: String): Resource<ProductResponse>
 }

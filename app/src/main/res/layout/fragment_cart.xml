@@ -277,7 +277,7 @@
                                     android:layout_marginTop="10.17dp"
                                     android:layout_width="18dp"
                                     android:layout_height="27.8dp"
-                                    android:text="@string/primary_string"
+                                    android:text="@string/add_to_cart"
                                     />
 
                             </RelativeLayout>

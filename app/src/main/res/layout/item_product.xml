@@ -59,7 +59,7 @@
             android:layout_marginTop="256dp">
             <Button
                 android:id="@+id/addToCart"
-                android:text="@string/primary_string"
+                android:text="@string/add_to_cart"
                 android:layout_width="135dp"
                 android:layout_height="24.6dp"
                 android:layout_gravity="center_horizontal|center"
@@ -67,8 +67,8 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/_bg__component_1_ek1_shape"
                 android:gravity="center"
-                android:textColor="@color/_bg__iphone_14___1_ek2_color"
-                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textSize="18dp"
                 />
 
 
