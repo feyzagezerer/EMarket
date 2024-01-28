@@ -25,6 +25,7 @@ import com.e_market.data.remote.responses.ProductResponse
 import com.e_market.databinding.FragmentHomeBinding
 import com.e_market.ui.HomeAdapter
 import com.e_market.ui.viewmodels.HomeViewModel
+import com.e_market.ui.views.EMarketActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -54,14 +55,13 @@ class HomeFragment : Fragment() {
         searchView.queryHint = "Search"
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                // Kullanıcı arama yapmayı tamamladığında gerçekleşir
-                // Bu noktada arama sonuçlarını işleyebilirsiniz
+
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                // Arama metni değiştikçe gerçekleşir
-                // Bu noktada otomatik tamamlama veya canlı arama işlemleri yapabilirsiniz
+                Toast.makeText(requireContext(), newText, Toast.LENGTH_SHORT).show()
+                newText?.let { viewModel.searchProduct(it) }
                 return true
             }
 
@@ -74,12 +74,17 @@ class HomeFragment : Fragment() {
     }
 
     private fun getProducts() {
-        viewModel.productList.observe(viewLifecycleOwner, Observer {
-            adapter = HomeAdapter(it, this::onItemClicked, this::onAddToCartClicked)
+        viewModel.productListLiveData.observe(viewLifecycleOwner, Observer {
+            adapter = HomeAdapter(it, this::onItemClicked, this::onAddToCartClicked, this::onFavoriteClicked)
             val layoutManager = GridLayoutManager(context, 2) // İkinci parametre sütun sayısını belirler
             binding.listProductRV.layoutManager = layoutManager
             binding.listProductRV.adapter = adapter
         })
+        viewModel.cartProductCount.observe(viewLifecycleOwner){
+            if(it > 0){
+                (activity as EMarketActivity).showBadge(it)
+            }
+        }
     }
 
     private fun onItemClicked(id: String){
@@ -91,7 +96,7 @@ class HomeFragment : Fragment() {
     private fun onAddToCartClicked(productResponse: ProductResponse){
         val productItem  = ProductItem ("apiResponse.id",
             1,
-            productResponse.price.toFloat(),
+            productResponse.price.toFloat() ,
             productResponse.model,
             productResponse.brand,
             productResponse.imageUrl,
@@ -99,6 +104,10 @@ class HomeFragment : Fragment() {
         )
 
         viewModel.insertProductItem(productItem)
+    }
+
+    private fun onFavoriteClicked(response: ProductResponse){
+        viewModel.onFavoriteClicked(response)
     }
 
 

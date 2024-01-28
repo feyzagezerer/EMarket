@@ -2,6 +2,8 @@ package com.e_market.data.repository
 
 
 import androidx.lifecycle.LiveData
+import com.e_market.data.local.FavoriteDao
+import com.e_market.data.local.FavoriteItem
 import com.e_market.data.local.ProductDao
 import com.e_market.data.local.ProductItem
 import com.e_market.data.remote.EMarketApi
@@ -11,6 +13,7 @@ import javax.inject.Inject
 
 class ProductRepository @Inject constructor(
     private val productDao: ProductDao,
+    private val favoriteDao: FavoriteDao,
     private val eMarketAPI: EMarketApi
 )  : EMarketRepository{
 // for room
@@ -64,5 +67,12 @@ class ProductRepository @Inject constructor(
             Resource.error("Couldn't reach the server. Check your internet connection", null)
         }
     }
+
+    //region favorites
+    override suspend fun deleteFavoriteItem(favoriteItem: FavoriteItem) = favoriteDao.deleteFavoriteItem(favoriteItem)
+    override suspend fun insertFavoriteItem(favoriteItem: FavoriteItem) = favoriteDao.insertFavoriteItem(favoriteItem)
+    override suspend fun loadMyFavorites() = favoriteDao.loadMyFavorites()
+    override suspend fun loadMyFavorite(id: String) = favoriteDao.loadMyFavorite(id)
+    //endregion
 
 }

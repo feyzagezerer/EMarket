@@ -12,16 +12,9 @@ interface ProductDao {
 
     @Delete
     suspend fun deleteProductItem(productItem: ProductItem)
-
-    // Database'den gözlemlenebilir (observable) olarak tüm verileri getir. - Bring all datas from database as observable
-    @Query("SELECT * FROM product_items ORDER BY id ASC ")
+  @Query("SELECT * FROM product_items ORDER BY id ASC ")
     fun observeAllProductItem(): LiveData<List<ProductItem>>
-/*
 
-    // Database'deki fiyat ve ürün miktarını çarp toplam maliyeti getir - Bring total price, multiplication the price and amount of the product
-    @Query("select sum(price * amount) from product_items")
-    fun observeTotalPrice(): LiveData<Float>
-*/
 
     @Query("select * from product_items")
     suspend fun loadMyCart(): List<ProductItem>

@@ -21,7 +21,8 @@ import com.e_market.util.Constants.IMAGE_MAIN_URL
 class HomeAdapter(
     private val dataSet: List<ProductResponse>,
     private val _onClicked: (String) -> Unit,
-    private val _addToChartClicked: (ProductResponse) -> Unit
+    private val _addToChartClicked: (ProductResponse) -> Unit,
+    private val _favoriteClicked: (ProductResponse) -> Unit
 ) :
     RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
@@ -30,12 +31,14 @@ class HomeAdapter(
         val brandAndModel: TextView
         val productImage: ImageView
         val addToCart: AppCompatButton
+        val addToFavoriteIV: ImageView
 
         init {
             price = view.findViewById(R.id.price)
             brandAndModel = view.findViewById(R.id.brandAndModel)
             productImage = view.findViewById(R.id.productImage)
             addToCart = view.findViewById(R.id.addToCart)
+            addToFavoriteIV = view.findViewById(R.id.addToFavoriteIV)
         }
     }
 
@@ -51,7 +54,7 @@ class HomeAdapter(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
         val response = dataSet[position]
-        viewHolder.price.text = response.price.toString()
+        viewHolder.price.text = response.price.toString() + "₺"
         viewHolder.brandAndModel.text =
             String.format("%s %s", response.brand, dataSet[position].model)
 
@@ -63,6 +66,10 @@ class HomeAdapter(
 
         viewHolder.addToCart.setOnClickListener {
             _addToChartClicked.invoke(response)
+        }
+
+        viewHolder.addToFavoriteIV.setOnClickListener {
+            _favoriteClicked.invoke(response)
         }
 
         viewHolder.itemView.setOnClickListener {

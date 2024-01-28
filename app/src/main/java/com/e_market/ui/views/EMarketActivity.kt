@@ -23,18 +23,21 @@ class EMarketActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEmarketBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val navView: BottomNavigationView = binding.navView
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.mobile_navigation) as NavHostFragment
         val navController = navHostFragment.navController
         val appBarConfiguration =
             AppBarConfiguration(setOf(R.id.navigation_home, R.id.navigation_cart, R.id.navigation_favorites))
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        binding.navView.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {
         navController = findNavController(R.id.mobile_navigation)
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    fun showBadge(productCount: Int){
+        binding.navView.getOrCreateBadge(R.id.navigation_cart).number = productCount
     }
 }

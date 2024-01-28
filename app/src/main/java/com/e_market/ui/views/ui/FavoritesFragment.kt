@@ -56,9 +56,16 @@ class FavoritesFragment @Inject constructor(
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadFavorites()
+    }
+
     private fun observeChanges() {
-        viewModel?.getAllProducts()?.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+        viewModel.apply {
+            favoriteList.observe(viewLifecycleOwner){
+                adapter.submitList(it)
+            }
         }
     }
 
@@ -76,10 +83,10 @@ class FavoritesFragment @Inject constructor(
             // kaydırdığımız konum için recyclerView'daki ilgli konuma eşitliyoruz.
             val position = viewHolder.layoutPosition
             val item = adapter.currentList[position]
-            viewModel?.deleteProductItem(item)
+            viewModel.deleteFavoriteItem(item)
             Snackbar.make(requireView(), "Successfully deleted item", Snackbar.LENGTH_LONG).apply {
                 setAction("Undo") {
-                    viewModel?.insertProductItem(item)
+                    viewModel.insertFavorite(item)
                 }
                 show()
             }

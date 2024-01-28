@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.e_market.data.local.ProductItem
+import com.e_market.data.local.FavoriteItem
 import com.e_market.databinding.ItemFavoritesProductBinding
 
-class FavoritesAdapter : ListAdapter<ProductItem, RecyclerView.ViewHolder>(DIFF_UTIL_CALLBACK) {
+class FavoritesAdapter : ListAdapter<FavoriteItem, RecyclerView.ViewHolder>(DIFF_UTIL_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -31,12 +31,12 @@ class FavoritesAdapter : ListAdapter<ProductItem, RecyclerView.ViewHolder>(DIFF_
         RecyclerView.ViewHolder(binding.root)
 
     companion object {
-        private val DIFF_UTIL_CALLBACK = object : DiffUtil.ItemCallback<ProductItem>() {
-            override fun areItemsTheSame(oldItem: ProductItem, newItem: ProductItem): Boolean {
+        private val DIFF_UTIL_CALLBACK = object : DiffUtil.ItemCallback<FavoriteItem>() {
+            override fun areItemsTheSame(oldItem: FavoriteItem, newItem: FavoriteItem): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: ProductItem, newItem: ProductItem): Boolean {
+            override fun areContentsTheSame(oldItem: FavoriteItem, newItem: FavoriteItem): Boolean {
                 return oldItem == newItem
             }
 

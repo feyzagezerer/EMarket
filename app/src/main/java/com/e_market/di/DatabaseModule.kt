@@ -28,4 +28,9 @@ import javax.inject.Singleton
             database: ProductDatabase
         ) = database.productDao()
 
+        @Singleton
+        @Provides
+        fun provideFavoriteDao(
+            database: ProductDatabase
+        ) = database.favoriteDao()
     }

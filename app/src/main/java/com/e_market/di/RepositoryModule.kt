@@ -1,5 +1,6 @@
 package com.e_market.di
 
+import com.e_market.data.local.FavoriteDao
 import com.e_market.data.local.ProductDao
 import com.e_market.data.remote.EMarketApi
 import com.e_market.data.repository.EMarketRepository
@@ -8,8 +9,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -19,7 +18,8 @@ object RepositoryModule {
     @Provides
     fun provideProductRepository(
         dao: ProductDao,
+        favoriteDao: FavoriteDao,
         api: EMarketApi
-    ) = ProductRepository(dao, api) as EMarketRepository
+    ) = ProductRepository(dao, favoriteDao, api) as EMarketRepository
 }
 

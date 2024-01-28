@@ -2,6 +2,7 @@ package com.e_market.data.repository
 
 
 import androidx.lifecycle.LiveData
+import com.e_market.data.local.FavoriteItem
 import com.e_market.data.local.ProductItem
 import com.e_market.data.remote.responses.ProductResponse
 import com.e_market.util.Resource
@@ -27,4 +28,12 @@ interface EMarketRepository {
     // Api
     suspend fun getAllProducts(): Resource<List<ProductResponse>>
     suspend fun getProduct(id: String): Resource<ProductResponse>
+
+    //region favorites
+    suspend fun insertFavoriteItem(favoriteItem: FavoriteItem)
+    suspend fun deleteFavoriteItem(favoriteItem: FavoriteItem)
+    suspend fun loadMyFavorites(): List<FavoriteItem>
+
+    suspend fun loadMyFavorite(id: String): FavoriteItem?
+    //endregion
 }
