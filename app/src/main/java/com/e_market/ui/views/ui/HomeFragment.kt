@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
         searchView.queryHint = "Search"
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-
+                query?.let { viewModel.searchProduct(it) }
                 return true
             }
 

@@ -34,6 +34,8 @@ class HomeViewModel @Inject constructor(var productRepo: ProductRepository) : Vi
             _productList.addAll(response.data!!)
             _productListLiveData.postValue(_productList)
         }
+
+        loadCartCount()
     }
 
     fun searchProduct(filter: String){

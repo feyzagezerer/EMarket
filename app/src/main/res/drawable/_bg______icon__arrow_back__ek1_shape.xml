@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- _bg______icon__arrow_back__ek1 from your XD file. -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-	android:shape="rectangle" >
-	<solid android:color="@color/apple_iphone_14_pro_max_256_gb_color" />
-</shape>
-
